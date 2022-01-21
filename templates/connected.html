@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+     <form action = "/main" method = get>
+       <input type="submit" value = "return">
+     </form>
+     <h2>
+       Connected devices:
+     </h2>
+       <!-- fieldset template -->
+     <table>
+        {% for nodes in posts['nodes'] %}
+          {% if loop.index0%4 == 0 %}
+            <tr>
+          {%endif%}
+            <th>
+              <fieldset name="device_name+{{ loop.index }}" class= "device">
+                <dt>
+                  <h3>
+                    devicekey:  {{ nodes.deviceKey }}
+                  </h3>
+                </dt>
+                <fieldset class="io">
+                   {% for element in nodes['configuration'].elements %}
+                      <label>
+                        unicastAddress:  {{ element.unicastAddress }}
+                        &emsp;
+                        <a href="/on/{{ element.unicastAddress }}">on</a>
+                        &emsp;
+                        <a href="/off/{{ element.unicastAddress }}">off</a>
+                      </label>
+                   {% endfor %}
+                 </fieldset>
+               </fieldset>
+             </th>
+           {% if loop.index0%6 == 1  and loop.index0 != 1 %}
+             </tr>
+           {%endif%}
+        {% endfor %}
+    </table>
+{% endblock content %}

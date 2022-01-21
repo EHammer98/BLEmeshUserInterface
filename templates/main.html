@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+    <form action = "/connected" method = get>
+      <input type="submit" value = "See connected devices">
+    </form>
+    <form action = "/devices" method = get>
+      <input type="submit" value = "Delete device">
+    </form>
+{% endblock content %}
