@@ -1,0 +1,49 @@
+body {
+  background-color: #363636;
+  color: white;
+  font-family: system-ui;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 48px;
+}
+
+.header {
+    background-color: #004E64;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+h2 {
+  margin-left: 40px;
+  color: #00A5CF;
+}
+
+h3 {
+  margin-left: 20px;
+  color: #7AE582;
+}
+
+legend {
+  margin-left: 0px;
+  color: #D6FFE9;
+}
+
+fieldset {
+  margin-left: 20px;
+  border-color: black;
+  margin-right: 0px;
+}
+
+fieldset.device {
+  background-color: #484848;
+  color: #D6FFE9;
+  width: 240px;
+  margin-bottom: 20px;
+}
+
+.io {
+  margin-right: 20px;
+}
