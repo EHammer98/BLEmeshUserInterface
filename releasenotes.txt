@@ -1,0 +1,4 @@
+1. added a provision page
+2. changed the lay out of the connected devices page
+3. included a remove device page
+4. added a on / off and status button on the connected devices page
