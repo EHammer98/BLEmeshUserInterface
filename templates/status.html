@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>
+    Device {{uniAddress}} is turned
+    {% if status == "on" %}
+      <p class = "statusOn" > {{ status }} </p>
+    {%else%}
+      <p class = "statusOff" > {{ status }} </p>
+    {%endif%}
+  </h2>
+{% endblock content %}

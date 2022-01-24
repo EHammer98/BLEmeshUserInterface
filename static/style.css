@@ -13,13 +13,17 @@ h1 {
 h2 {
   text-align: left;
   font-size: 24px;
-  margin-left: 40px;
+  margin-left: 20px;
   margin-top: 40px;
 }
 
 h3 {
-  color: #fca311;
+  text-align: left;
   margin-left: 20px;
+}
+
+h4 {
+  text-align: left;
 }
 
 header {
@@ -38,25 +42,96 @@ table {
   margin-left: 20px;
 }
 
-a{
+p.statusOn{
+  color: green;
+  text-align: center;
+  font-size: 100px;
+}
+p{
+  text-align: left;
+  margin: 10px;
+}
+p.statusOff{
   color: red;
+  text-align: center;
+  font-size: 100px;
 }
 
 legend {
   margin-left: 0px;
 }
 
-fieldset {
-  padding: 10px;
-  margin: 20px;
+fieldset.navigation {
+  padding: inherit;
   border-radius: 3px;
   border-color: #0c090d;
+  margin: auto;
+  margin-top: 10px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #4f4f4f;
+
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+table.taskbar{
+  margin-left: 20px;
+  padding: 0;
+  list-style-type: none;
+  width: 60px;
+  display: block;
+}
+
+table.result{
+  padding: 10px;
+  width: 400px;
+}
+
+table.result tr{
+  padding: 10px;
+  width: 200px;
+}
+
+b.kleurtje{
+  color: #fca311;
 }
 
 fieldset.device {
   background-color: #4f4f4f;
-  width: 400px;
+  width: 380px;
   display: inline-block;
+  padding: inherit;
+  margin: 10px;
+  border-radius: 2px;
+  border-color: #0c090d;
+}
+
+fieldset.io {
+  background-color: #4f4f4f;
+  width: 380px;
+  display: inline-block;
+  padding: inherit;
+  border-radius: 2px;
+  border-color: #0c090d;
 }
 
 input[type="submit"] {
@@ -66,6 +141,31 @@ input[type="submit"] {
   height: auto;
   border-radius:10px;
   font-size: 18px;
-  margin-left: 40px;
-  margin-top: 40px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+
+input[type="text"] {
+  background-color: #0c090d;
+  color: white;
+  width: auto;
+  height: auto;
+  border-radius:10px;
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+input[type="radio"] {
+  background-color: #0c090d;
+  color: white;
+  width: auto;
+  height: auto;
+  border-radius:10px;
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+p.textInput{
+  margin-left: 20px;
 }

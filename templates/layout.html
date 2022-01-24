@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Group D">
   <link rel="icon" href={{ url_for('static', filename='ble.png') }}>
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}?v=1.0.5">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}?v=1.0.6">
 
 </head>
 
 <body>
   <!-- content here... -->
   <header class="site-header">
-    <h1> Bluetooth low energy application</h1>
+    <h1>
+      Bluetooth low energy application
+    </h1>
   </header>
-
+  <ul>
+    <li><a href="/connected">Connected devices</a></li>
+    <li><a href="/devices">Manage devices</a></li>
+  </ul>
   <main role="main" class="container">
     <div class="row">
       <div class="col-md-8">

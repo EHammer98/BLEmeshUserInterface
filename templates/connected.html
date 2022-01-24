@@ -1,8 +1,5 @@
 {% extends "layout.html" %}
 {% block content %}
-     <form action = "/main" method = get>
-       <input type="submit" value = "return">
-     </form>
      <h2>
        Connected devices:
      </h2>
@@ -16,20 +13,55 @@
               <fieldset name="device_name+{{ loop.index }}" class= "device">
                 <dt>
                   <h3>
-                    devicekey:  {{ nodes.deviceKey }}
+                    Devicekey:
                   </h3>
+                  <h3>
+                    <b class = "kleurtje">{{ nodes.deviceKey }}</b>
+                  </h3>
+
                 </dt>
-                <fieldset class="io">
+
                    {% for element in nodes['configuration'].elements %}
-                      <label>
-                        unicastAddress:  {{ element.unicastAddress }}
-                        &emsp;
-                        <a href="/on/{{ element.unicastAddress }}">on</a>
-                        &emsp;
-                        <a href="/off/{{ element.unicastAddress }}">off</a>
-                      </label>
+                      {% if element.models %}
+                       {% for model in element['models'] %}
+                          {% if model.publish %}
+                            <fieldset class="io">
+                            <p>
+                              Publish:
+                              <br>
+                              UnicastAddress:
+                              &emsp;
+                              <b class = "kleurtje">{{ element.unicastAddress }}</b>
+                              &emsp;
+                              <a href="/on/{{ element.unicastAddress }}" class= "on">on</a>
+                              &emsp;
+                              <a href="/off/{{ element.unicastAddress }}" class= "off">off</a>
+                              &emsp;
+                              <a href="/status/{{ element.unicastAddress }}" class= "status">status</a>
+                            </p>
+                            </fieldset>
+                          {% endif %}
+                          {% if model.subscribe %}
+                            <fieldset class="io">
+                            <p>
+                              Subscribe:
+                              <br>
+                              unicastAddress:
+                              &emsp;
+                               <b class = "kleurtje">{{ element.unicastAddress }}</b>
+                              &emsp;
+                              <a href="/on/{{ element.unicastAddress }}" class= "on">on</a>
+                              &emsp;
+                              <a href="/off/{{ element.unicastAddress }}" class= "off">off</a>
+                              &emsp;
+                              <a href="/status/{{ element.unicastAddress }}" class= "status">status</a>
+                            <p>
+                            </fieldset>
+                          {% endif %}
+                       {% endfor %}
+                      {% endif %}
                    {% endfor %}
-                 </fieldset>
+
                </fieldset>
              </th>
            {% if loop.index0%6 == 1  and loop.index0 != 1 %}

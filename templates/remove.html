@@ -1,8 +1,5 @@
 {% extends "layout.html" %}
 {% block content %}
-     <form action = "/main" method = get>
-       <input type="submit" value = "return">
-     </form>
      <h2>
        Connected devices:
      </h2>
@@ -11,12 +8,14 @@
             <tr>
               <th>
                 <h3>
-                  devicekey:  {{ nodes.deviceKey }}\
+                  Devicekey:  <b class = "kleurtje">{{ nodes.deviceKey }}</b>
                 </h3>
               </th>
               <th>
                 <h3>
-                  <a href="/remove/{{ nodes.deviceKey }}">REMOVE</a>
+                  <a href="/remove/{{ nodes.deviceKey }}">Remove</a>
+                  &emsp;
+                  <a href="/devices/add/{{ nodes.deviceKey }}">Add to group</a>
                 </h3>
               </th>
             </tr>

@@ -8,3 +8,8 @@ f2
 2. changed the lay out of the connected devices page
 3. included a remove device page
 4. added a on / off and status button on the connected devices page
+
+f3
+1. added an add group page
+2. minor changes in css
+3. additional functionality in webapp.py script
