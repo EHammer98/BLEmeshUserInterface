@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+     <form action = "/main" method = get>
+       <input type="submit" value = "return">
+     </form>
+     <h2>
+       Connected devices:
+     </h2>
+        <table>
+          {% for nodes in posts['nodes'] %}
+            <tr>
+              <th>
+                <h3>
+                  devicekey:  {{ nodes.deviceKey }}\
+                </h3>
+              </th>
+              <th>
+                <h3>
+                  <a href="/remove/{{ nodes.deviceKey }}">REMOVE</a>
+                </h3>
+              </th>
+            </tr>
+          {% endfor %}
+        </table>
+{% endblock content %}

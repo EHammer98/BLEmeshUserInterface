@@ -1,0 +1,10 @@
+f1
+1. created a index.html
+2. created a style.css
+3. created app.py
+
+f2
+1. added a provision page
+2. changed the lay out of the connected devices page
+3. included a remove device page
+4. added a on / off and status button on the connected devices page
