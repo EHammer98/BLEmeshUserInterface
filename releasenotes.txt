@@ -1,3 +1,9 @@
+f1
+1. created a layout.html
+2. created a style.css
+3. created a main.html
+
+f2
 1. added a provision page
 2. changed the lay out of the connected devices page
 3. included a remove device page
