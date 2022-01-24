@@ -1,7 +1,7 @@
 f1
-1. created a layout.html
+1. created a index.html
 2. created a style.css
-3. created a main.html
+3. created app.py
 
 f2
 1. added a provision page
