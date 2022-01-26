@@ -115,6 +115,17 @@ b.kleurtje{
   color: #fca311;
 }
 
+b.error{
+  color: red;
+}
+
+b.turnedOn{
+  color: #61D095;
+}
+b.turnedOff{
+  color: #F9564F;
+}
+
 fieldset.device {
   background-color: #4f4f4f;
   width: 380px;

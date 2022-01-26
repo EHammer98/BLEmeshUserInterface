@@ -1,11 +1,12 @@
 {% extends "layout.html" %}
 {% block content %}
   <h2>
-    Device {{uniAddress}} is turned
     {% if status == "on" %}
-      <p class = "statusOn" > {{ status }} </p>
-    {%else%}
-      <p class = "statusOff" > {{ status }} </p>
+      Element <b class = "kleurtje">{{uniAddress}}</b> is turned: <b class = "turnedOn"> {{ status }} </b>
+    {% elif status == "off" %}
+      Element <b class = "kleurtje">{{uniAddress}}</b> is turned: <b class = "turnedOff"> {{ status }} </b>
+    {% else %}
+      <b class = "error"> Error </b>
     {%endif%}
   </h2>
 {% endblock content %}
