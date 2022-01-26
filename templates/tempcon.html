@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block content %}
+     <form action = "/main" method = get>
+       <input type="submit" value = "return">
+     </form>
+     <h2>
+       Connected devices:
+     </h2>
+       <!-- fieldset template -->
+
+     <table>
+       <tr>
+         <td>
+             <!--1-->
+             <fieldset name="device_name1" class= "device">
+             <dt>
+               <h3>
+                 nRF52840 0x0000001
+               </h3>
+             </dt>
+             <form  method="POST">
+             <fieldset class="io">
+               <legend>
+                 Outputs
+               </legend>
+             </fieldset>
+               <fieldset class="io">
+                 <legend>
+                   Inputs
+                 </legend>
+                 <dd>
+                    <label>
+                      <input type="checkbox" name='kitchen' value={{ "on" if box1 else "off" }} onchange="this.form.submit()" {{ "checked" if box1 else "" }}> Kitchen
+                    </label>
+
+                 </dd>
+                 <dd>
+                   <label>
+                     <input type="checkbox" name='livingroom' value={{ "on" if box2 else "off" }} onchange="this.form.submit()" {{ "checked" if box2 else "" }}> Livingroom
+                   </label>
+                 </dd>
+               </fieldset>
+             </form>
+             </fieldset>
+         </td>
+       </tr>
+     </table>
+{% endblock content %}
