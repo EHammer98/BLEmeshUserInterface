@@ -10,6 +10,7 @@ f2
 4. added a on / off and status button on the connected devices page
 
 f3
-1. added an add group page
+1. added a model configuration page
 2. minor changes in css
 3. additional functionality in webapp.py script
+4. improved remove device page
