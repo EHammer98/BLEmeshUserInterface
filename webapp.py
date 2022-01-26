@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, flash, current_app as app
 import sys, os, subprocess, time, json
-#import pyBluezConnector
+import pyBluezConnector
 app = Flask(__name__)
 
 @app.route('/')
@@ -21,13 +21,11 @@ def connectedDevices():
 
 @app.route('/on/<unicastAddress>', methods = ['GET'])
 def switchOnApp(unicastAddress):
-    #print("on : " + unicastAddress)
     switchOn(unicastAddress)
     return redirect('/connected', code=302)
 
 @app.route('/off/<unicastAddress>', methods = ['GET'])
 def switchOffApp(unicastAddress):
-    #print("off : " + unicastAddress)
     switchOff(unicastAddress)
     return redirect('/connected', code=302)
 
@@ -40,14 +38,18 @@ def statusRequest(unicastAddress):
 @app.route('/devices/add/<uidd>', methods = ['POST', 'GET'])
 def provision(uidd):
     addDev(uidd)
+    return render_template('provision.html', uidd=uidd)
+
+@app.route('/devices/config/<device>', methods = ['POST', 'GET'])
+def config(device):
     #filename = os.path.join(app.static_folder, 'message.json')
     #with open(filename) as file:
         #data = json.load(file)
     with open("/home/pi/.config/meshctl/prov_db.json", 'r') as file:
         data = json.load(file)
-    return render_template('provision.html', uidd=uidd, posts=data)
+    return render_template('group.html', device=device, posts=data)
 
-@app.route('/grouped/<device>', methods = ['POST', 'GET'])
+@app.route('/devices/config/grouped/<device>', methods = ['POST', 'GET'])
 def addToGroup(device):
     if request.method == 'POST':
         result = request.form
