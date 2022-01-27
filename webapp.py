@@ -37,8 +37,8 @@ def statusRequest(unicastAddress):
 
 @app.route('/devices/add/<uidd>', methods = ['POST', 'GET'])
 def provision(uidd):
-    pyBluezConnector.addDev(uidd)
-    return render_template('provision.html', uidd=uidd)
+    click = pyBluezConnector.addDev(uidd)
+    return render_template('provision.html', uidd=uidd, click = click)
 
 @app.route('/devices/config/<device>', methods = ['POST', 'GET'])
 def config(device):
