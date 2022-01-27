@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>
+    {% if status == "ON" %}
+      Element <b class = "kleurtje">{{uniAddress}}</b> is turned: <b class = "turnedOn"> {{ status }} </b>
+    {% elif status == "OFF" %}
+      Element <b class = "kleurtje">{{uniAddress}}</b> is turned: <b class = "turnedOff"> {{ status }} </b>
+    {% else %}
+      <b class = "error"> Error </b>
+    {%endif%}
+  </h2>
+{% endblock content %}

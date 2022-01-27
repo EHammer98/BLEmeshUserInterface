@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <h2>
+    Model configuration for deviceKey: <b class = "kleurtje">{{ device }}</b>
+  </h2>
+  <table>
+    {% for nodes in posts['nodes'] %}
+      {% if nodes.deviceKey == device %}
+        {% for element in nodes['configuration'].elements %}
+          <tr>
+            <th>Unicast address: </th>
+            <td><b class = "kleurtje">{{ element.unicastAddress }}</b></td>
+          </tr>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </table>
+  <h3>
+    Add to group:
+  </h3>
+
+  <form action = "/devices/config/grouped/{{device}}" method = "POST">
+   <p class = "textInput">Unicast address: <input type = "text" name = "uni" placeholder="Enter a valid unicast address" required/></p>
+   <p class = "textInput">Group: <input type = "text" name = "group" placeholder="Enter a valid group code" required/></p>
+   <p><input type="radio" name="options" id="option1" value="switch" required> Publish </input></p>
+   <p><input type="radio" name="options" id="option2" value="light" required> Subscribe </input></p>
+   <p><input type = "submit" value = "Add"/></p>
+  </form>
+
+{% endblock content %}

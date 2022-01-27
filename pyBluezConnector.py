@@ -88,6 +88,7 @@ def lightStat(node):
         try:
             response = process.stdout.readline().decode('utf8')
             print("Response: " + response + "\n")
+            return response
             if (response == 'Failed to AcquireWrite\n'):
                 print("Not able to reach node, reconnecting now...")
                 connect()

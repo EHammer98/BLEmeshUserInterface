@@ -1,9 +1,10 @@
 {% extends "layout.html" %}
 {% block content %}
-  <form action = "/main?" method = get>
-    <input type="submit" value = "return">
-  </form>
+
   <h2>
-    provisioning device: {{ uidd }}
+    Provisioned device with uidd: <b class = "kleurtje">{{ uidd }}</b>
+  </h2>
+  <h2>
+    Press the device <b class = "kleurtje">{{ click }}</b> times
   </h2>
 {% endblock content %}
