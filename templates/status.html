@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 {% block content %}
   <h2>
-    {% if status == "on" %}
+    {% if status == "ON" %}
       Element <b class = "kleurtje">{{uniAddress}}</b> is turned: <b class = "turnedOn"> {{ status }} </b>
-    {% elif status == "off" %}
+    {% elif status == "OFF" %}
       Element <b class = "kleurtje">{{uniAddress}}</b> is turned: <b class = "turnedOff"> {{ status }} </b>
     {% else %}
       <b class = "error"> Error </b>
