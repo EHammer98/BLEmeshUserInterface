@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block content %}
+     <h2>
+       Connected devices:
+     </h2>
+       <!-- fieldset template -->
+     <table>
+        {% for nodes in posts['nodes'] %}
+          {% if loop.index0%4 == 0 %}
+            <tr>
+          {%endif%}
+            <th>
+              <fieldset name="device_name+{{ loop.index }}" class= "device">
+                <dt>
+                  <h3>
+                    Devicekey:
+                  </h3>
+                  <h3>
+                    <b class = "kleurtje">{{ nodes.deviceKey }}</b>
+                  </h3>
+
+                </dt>
+
+                   {% for element in nodes['configuration'].elements %}
+                      {% if element.models %}
+                       {% for model in element['models'] %}
+                          {% if model.publish %}
+                            <fieldset class="io">
+                            <p>
+                              Publish:
+                              <br>
+                              UnicastAddress:
+                              &emsp;
+                              <b class = "kleurtje">{{ element.unicastAddress }}</b>
+                              &emsp;
+                              <a href="/on/{{ element.unicastAddress }}" class= "on">on</a>
+                              &emsp;
+                              <a href="/off/{{ element.unicastAddress }}" class= "off">off</a>
+                              &emsp;
+                              <a href="/status/{{ element.unicastAddress }}" class= "status">status</a>
+                            </p>
+                            </fieldset>
+                          {% endif %}
+                          {% if model.subscribe %}
+                            <fieldset class="io">
+                            <p>
+                              Subscribe:
+                              <br>
+                              unicastAddress:
+                              &emsp;
+                               <b class = "kleurtje">{{ element.unicastAddress }}</b>
+                              &emsp;
+                              <a href="/on/{{ element.unicastAddress }}" class= "on">on</a>
+                              &emsp;
+                              <a href="/off/{{ element.unicastAddress }}" class= "off">off</a>
+                              &emsp;
+                              <a href="/status/{{ element.unicastAddress }}" class= "status">status</a>
+                            <p>
+                            </fieldset>
+                          {% endif %}
+                       {% endfor %}
+                      {% endif %}
+                   {% endfor %}
+
+               </fieldset>
+             </th>
+           {% if loop.index0%6 == 1  and loop.index0 != 1 %}
+             </tr>
+           {%endif%}
+        {% endfor %}
+    </table>
+{% endblock content %}

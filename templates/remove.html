@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+     <h2>
+       Connected devices:
+     </h2>
+        <table>
+          {% for nodes in posts['nodes'] %}
+            <tr>
+              <th>
+                <h3>
+                  Devicekey:  <b class = "kleurtje">{{ nodes.deviceKey }}</b>
+                </h3>
+              </th>
+              <th>
+                <h3>
+                  <a href="/remove/{{ nodes.deviceKey }}/{{ nodes['configuration'].elements[0].unicastAddress }}/{{ nodes['configuration'].elements[1].unicastAddress }}/{{ nodes['configuration'].elements[2].unicastAddress }}/{{ nodes['configuration'].elements[3].unicastAddress }}">Remove</a>
+                  &emsp;
+                  <a href="/devices/config/{{ nodes.deviceKey }}">Add to group</a>
+                </h3>
+              </th>
+            </tr>
+          {% endfor %}
+        </table>
+{% endblock content %}

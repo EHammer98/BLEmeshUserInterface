@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>
+  Device connected to group:
+</h2>
+<table class = "result" border = 1>
+   {% for key, value in result.items() %}
+      <tr>
+         <th>
+          {% if key == "uni" %}
+            Unicast address
+          {% elif key == "group" %}
+            Group
+          {% else %}
+            Device type
+          {%endif%}
+         </th>
+         <td> {{ value }} </td>
+      </tr>
+   {% endfor %}
+</table>
+<form action = "/devices/add/{{device}}" method = get>
+  <input type="submit" value = "Add another one">
+</form>
+
+{% endblock content %}
